@@ -3,3 +3,4 @@
 // No valor do onClick, passe a função adicionarItemPedidos, 
 // por exemplo: onClick={() => adicionarItemPedidos(produto)}
 // No conteúdo do botão, coloque o texto "Selecionar" ou algo semelhante.
+
