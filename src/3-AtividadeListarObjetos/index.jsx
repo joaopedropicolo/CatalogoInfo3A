@@ -1,7 +1,7 @@
 // Crie um elemento `<div>`.
 // Utilize o método `map` para listar cada objeto da `listaProdutos`
 // dentro desse `<div>`.
-import { useState } from "react";
+import React, { useState } from "react"
 
 export default function Home() {
   const [listaProdutos, setProdutos] = useState([
@@ -12,8 +12,15 @@ export default function Home() {
 
   return (
     <div>
-         <h1>Livros de Programação</h1>
+         <h1>Lanchonete Moura</h1>
+         {
+          listaProdutos.map((produto)=>
+          <div key={produto.id}>
+            <p>{produto.nome}</p>
+            <p>{produto.preco}</p>
+          </div>
+          )
+         }
     </div>
-   
   );
 }
