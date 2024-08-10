@@ -4,27 +4,31 @@
 
 import { useState } from "react";
 
-const [listProduto, setProduto] = useState([
-    {
-    id: 1,
-    produto: "Sabão",
-    preco: 8
-    },
-    {
-    id: 2,
-    produto: "Alcool",
-    preco: 5
-    },
-    {
-    id: 3,
-    produto: "Coca-Cola",
-    preco: 4
-    }
-])
+export default function Home() {
+    const [listaProdutos, setProduto] = useState([
+        {
+            id: 1,
+            nome: "Lorem ipsum dolor sit amet.",
+            imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+            preco: 11
+        },
+        {
+            id: 2,
+            nome: "Lorem ipsum dolor sit amet.",
+            imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+            preco: 5
+        },
+        {
+            id: 3,
+            nome: "Lorem ipsum dolor sit amet.",
+            imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+            preco: 4
+        }
+    ]);
 
-    return(
+    return (
         <div>
             <h1>Lanchonete Moura</h1>
         </div>
-    )
+    );
 }

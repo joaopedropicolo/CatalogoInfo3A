@@ -44,14 +44,29 @@
 // Utilize `setListaPedidos` para atualizar o estado com a nova lista filtrada.
 // Exemplo: `setListaPedidos(listaAux);`
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
-  const [listaProdutos, setProdutos] = useState([
-    { id: 1, nome: 'Produto A', preco: 'R$ 10,00' },
-    { id: 2, nome: 'Produto B', preco: 'R$ 20,00' },
-    { id: 3, nome: 'Produto C', preco: 'R$ 30,00' }
-  ]);
+  const [listaProdutos, setProduto] = useState([
+    {
+    id: 1,
+    nome: "Lorem ipsum dolor sit amet.",
+    imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+    preco: 11
+    },
+    {
+    id: 2,
+    nome: "Lorem ipsum dolor sit amet.",
+    imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+    preco: 5
+    },
+    {
+    id: 3,
+    nome: "Lorem ipsum dolor sit amet.",
+    imagem: "https://www.redbridgeanalytics.com/wp-content/uploads/2021/12/lorem-ipsum-alternatives-768x492.png",
+    preco: 4
+    }
+])
 
   const [listaPedido, setListaPedido] = useState([]);
   
@@ -82,7 +97,8 @@ export default function Home() {
       {listaProdutos.map((produto) => (
         <div key={produto.id}>
           <p>{produto.nome}</p>
-          <p>{produto.preco}</p>
+          <img src={produto.imagem}></img>
+          <p>R$ {produto.preco}</p>
           <button onClick={() => adicionarItemPedidos(produto)}>Selecionar</button>
         </div>
       ))}
@@ -90,7 +106,8 @@ export default function Home() {
       {listaPedido.map((produto) => (
         <div key={produto.id}>
           <p>{produto.nome}</p>
-          <p>{produto.preco}</p>
+          <img src={produto.imagem}></img>
+          <p>R$ {produto.preco}</p>
           <button onClick={() => removerPedido(produto.id)}>Remover</button>
         </div>
       ))}

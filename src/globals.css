@@ -49,6 +49,12 @@ li a:hover {
     background-color: #e0e0e0;
 }
 
+img{
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 95%;
