@@ -3,7 +3,6 @@
 // Lembre-se de importar o `useState` do módulo `react` para utilizar o estado.
 
 import { useState } from "react";
-
 export default function Home() {
     const [listaProdutos, setProduto] = useState([
         {
@@ -28,7 +27,7 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Lanchonete Moura</h1>
+            <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
         </div>
     );
 }

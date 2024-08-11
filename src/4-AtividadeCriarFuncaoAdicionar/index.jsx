@@ -5,9 +5,7 @@
 // Exemplo: `setListaPedidos([...listaPedidos, objeto]);`
 
 import { useState } from "react";
-
 export default function Home() {
-
   const [listaProdutos, setProduto] = useState([
     {
     id: 1,
@@ -36,7 +34,7 @@ const adicionarItemPedidos = (objeto) => {
 
   return (
     <div>
-         <h1>Lanchonete Moura</h1>
+         <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
          {
           listaProdutos.map((produto)=>
           <div key={produto.id}>

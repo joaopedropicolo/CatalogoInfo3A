@@ -5,7 +5,7 @@
 export default function Home() {
     return (
         <div>
-            <h1>Lanchonete Moura</h1>
+            <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
         </div>
     );
 }

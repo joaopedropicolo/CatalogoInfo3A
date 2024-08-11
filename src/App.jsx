@@ -3,7 +3,8 @@ import "./globals.css";
 
 export default function App() {
     return (
-        <div>
+        <div id="centralizacao">
+        <div id="divLista">
             <h1>Lista de Exercícios</h1>
             <ol type='1'>
                 <li>
@@ -31,6 +32,7 @@ export default function App() {
                     <Link to="/oitavaAtividade">Atividade 8: Criar botão para remover o objeto do pedido</Link>
                 </li>
             </ol>
+        </div>
         </div>
     );
 }

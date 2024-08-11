@@ -45,7 +45,6 @@
 // Exemplo: `setListaPedidos(listaAux);`
 
 import { useState } from "react";
-
 export default function Home() {
   const [listaProdutos, setProduto] = useState([
     {
@@ -69,7 +68,6 @@ export default function Home() {
 ])
 
   const [listaPedido, setListaPedido] = useState([]);
-  
   const adicionarItemPedidos = (objeto) => {
     setListaPedido([...listaPedido, objeto]);
   }
@@ -92,17 +90,21 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Lanchonete Moura</h1>
-      {listaProdutos.map((produto) => (
-        <div key={produto.id}>
-          <p>{produto.nome}</p>
-          <img src={produto.imagem}></img>
-          <p>R$ {produto.preco}</p>
-          <button onClick={() => adicionarItemPedidos(produto)}>Selecionar</button>
-        </div>
-      ))}
-      <h2>Pedidos</h2>
+    <div className="bloco-principal">
+      <div className="bloco-produtos">
+      <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
+        {listaProdutos.map((produto)=>
+          <div key={produto.id}>
+            <img src={produto.imagem}></img>
+            <p>{produto.item}</p>
+            <p>R$ {produto.preco},00</p>
+            <button onClick={() => adicionarItemPedidos(produto)}>Comprar</button>
+          </div>
+              )
+            }
+      </div>
+      <div class="bloco-pedidos">
+      <h1>Pedidos</h1>
       {listaPedido.map((produto) => (
         <div key={produto.id}>
           <p>{produto.nome}</p>
@@ -111,6 +113,7 @@ export default function Home() {
           <button onClick={() => removerPedido(produto.id)}>Remover</button>
         </div>
       ))}
+      </div>
     </div>
   );
 }
