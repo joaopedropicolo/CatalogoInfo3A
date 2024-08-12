@@ -38,10 +38,10 @@ const adicionarItemPedidos = (objeto) => {
          {
           listaProdutos.map((produto)=>
           <div key={produto.id}>
-            <p>{produto.nome}</p>
+            <p class="produto-nome">{produto.nome}</p>
             <img src={produto.imagem}></img>
             <p>R$ {produto.preco}</p>
-            <button onClick={() => adicionarItemPedidos(produto)}>Comprar</button>
+            <button class="button-adicionar" onClick={() => adicionarItemPedidos(produto)}>Comprar</button>
           </div>
           )
          }

@@ -1,3 +1,4 @@
+//By: Picolo
 // Crie um elemento `<div>`.
 // Utilize o método `map` para listar cada objeto da `listaPedidos`
 // dentro desse `<div>`.
@@ -31,28 +32,28 @@ export default function Home() {
   }
 
   return (
+    <><div><h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1></div>
     <div className="bloco-principal">
       <div className="bloco-produtos">
-      <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
-      {listaProdutos.map((produto) => (
-        <div key={produto.id}>
-          <p>{produto.nome}</p>
-          <img src={produto.imagem}></img>
-          <p>R$ {produto.preco}</p>
-          <button onClick={() => adicionarItemPedidos(produto)}>Selecionar</button>
-        </div>
-      ))}
+        {listaProdutos.map((produto) => (
+          <div key={produto.id}>
+            <p class="produto-nome">{produto.nome}</p>
+            <img src={produto.imagem}></img>
+            <p>R$ {produto.preco}</p>
+            <button class="button-adicionar" onClick={() => adicionarItemPedidos(produto)}>Selecionar</button>
+          </div>
+        ))}
       </div>
       <div class="bloco-pedidos">
-      <h1>Pedidos</h1>
-      {listaPedido.map((produto) => (
-        <div key={produto.id}>
-          <p>{produto.nome}</p>
-          <img src={produto.imagem}></img>
-          <p>R$ {produto.preco}</p>
-        </div>
-      ))}
+        <h1>Pedidos</h1>
+        {listaPedido.map((produto) => (
+          <div key={produto.id}>
+            <p class="produto-nome">{produto.nome}</p>
+            <img src={produto.imagem}></img>
+            <p>R$ {produto.preco}</p>
+          </div>
+        ))}
       </div>
-    </div>
+    </div></>
   );
 }

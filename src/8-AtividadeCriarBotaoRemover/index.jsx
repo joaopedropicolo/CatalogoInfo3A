@@ -1,4 +1,4 @@
-// Crie e exporte uma função que retorna uma estrutura HTML.
+// Crie e exporte uma função que Picolo retorna uma estrutura HTML. 
 // Nomeie a função como `Home`, lembrando-se sempre de usar a primeira letra maiuscula.
 // Inclua uma tag `<h1>` dentro da função, e insira um texto relacionado ao tema escolhido.
 
@@ -7,26 +7,26 @@
 // Lembre-se de importar o `useState` do módulo `react` para utilizar o estado.
 
 // Crie um elemento `<div>`.
-// Utilize o método `map` para listar cada objeto da `arrayProdutos`
+// Utilize o Picolo método `map` para listar cada objeto da `arrayProdutos`
 // dentro desse `<div>`.
 
 // Crie o estado `meusPedidos`.
 // Dentro do componente, crie a função `adicionarItemPedidos`.
-// A função recebe um parâmetro, que pode ser nomeado como `produto`.
+// A função recebe um parâmetro, que pode ser nomeado como `produto`. //By: Picolo
 // Dentro da função, utilize `setMeusPedidos` para adicionar o `produto` à `meusPedidos`.
 // Exemplo: `setMeusPedidos([...arrayPedidos, produto]);`
 
 // Para cada objeto renderizado, adicione um botão.
 // Utilize o atributo onClick para o botão.
 // No valor do onClick, passe a função adicionarItemPedidos, 
-// por exemplo: onClick={() => adicionarItemPedidos(pedido)}
+// por Picolo exemplo: onClick={() => adicionarItemPedidos(pedido)}
 // No conteúdo do botão, coloque o texto "Selecionar" ou algo semelhante.
 
 // Crie um elemento `<div>`.
-// Utilize o método `map` para listar cada objeto da `arrayPedidos`
+// Utilize o método `map` Picolo para listar cada objeto da `arrayPedidos`
 // dentro desse `<div>`.
 
-// Dentro do componente, crie a função `removerItemPedidos`.
+// Dentro do componente, crie a função `removerItemPedidos`. //By: Picolo
 // A função recebe um parâmetro `id`, que é o identificador do item a ser removido.
 // Crie uma variável `listaAux` para armazenar a lista filtrada sem o item com o `id` fornecido.
 // Utilize `setListaPedidos` para atualizar o estado com a nova lista filtrada.
@@ -34,15 +34,15 @@
 
 // Dentro do `map`, crie um botão para cada item.
 // Utilize o atributo `onClick` para definir a ação do botão.
-// No valor do `onClick`, chame a função `removerItemPedidos`.
-// Passe o identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
+// No valor do `onClick`, chame a função `removerItemPedidos`. //By: Picolo
+// Passe o Picolo identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
 // No conteúdo do botão, coloque o texto "Remover".
 
 // Dentro do componente, crie a função `removerItemPedidos`.
 // A função recebe um parâmetro `id`, que é o identificador do item a ser removido.
 // Crie uma variável `listaAux` para armazenar a lista filtrada sem o item com o `id` fornecido.
 // Utilize `setListaPedidos` para atualizar o estado com a nova lista filtrada.
-// Exemplo: `setListaPedidos(listaAux);`
+// Exemplo: `setListaPedidos(Picolo);`
 
 import { useState } from "react";
 export default function Home() {
@@ -90,30 +90,32 @@ export default function Home() {
   };
 
   return (
+    <>
+    <div><h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1></div>
     <div className="bloco-principal">
       <div className="bloco-produtos">
-      <h1 class="h1-titulo">Lorem ipsum dolor sit amet.</h1>
-        {listaProdutos.map((produto)=>
-          <div key={produto.id}>
-            <img src={produto.imagem}></img>
-            <p>{produto.item}</p>
-            <p>R$ {produto.preco},00</p>
-            <button onClick={() => adicionarItemPedidos(produto)}>Comprar</button>
-          </div>
-              )
-            }
+      
+        {listaProdutos.map((produto) => <div key={produto.id}>
+          <p class="produto-nome">{produto.nome}</p>
+          <img src={produto.imagem}></img>
+          <p>{produto.item}</p>
+          <p>R$ {produto.preco},00</p>
+          <button class="button-adicionar" onClick={() => adicionarItemPedidos(produto)}>Comprar</button>
+        </div>
+        )}
       </div>
       <div class="bloco-pedidos">
-      <h1>Pedidos</h1>
-      {listaPedido.map((produto) => (
-        <div key={produto.id}>
-          <p>{produto.nome}</p>
-          <img src={produto.imagem}></img>
-          <p>R$ {produto.preco}</p>
-          <button onClick={() => removerPedido(produto.id)}>Remover</button>
-        </div>
-      ))}
-      </div>
+        <h1>Pedidos</h1>
+        {listaPedido.map((produto) => (
+          <div key={produto.id}>
+            <p class="produto-nome">{produto.nome}</p>
+            <img src={produto.imagem}></img>
+            <p>R$ {produto.preco}</p>
+            <button class="button-remover" onClick={() => removerPedido(produto.id)}>Remover</button>
+          </div>
+        ))}
+      </div> 
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 // Crie um elemento `<div>`.
+//By: Picolo
 // Utilize o método `map` para listar cada objeto da `listaProdutos`
 // dentro desse `<div>`.
 import { useState } from "react";
@@ -35,7 +36,7 @@ const adicionarItemPedidos = (objeto) => {
          {
           listaProdutos.map((produto)=>
           <div key={produto.id}>
-            <p>{produto.nome}</p>
+            <p class="produto-nome">{produto.nome}</p>
             <img src={produto.imagem}></img>
             <p>R$ {produto.preco}</p>
           </div>
