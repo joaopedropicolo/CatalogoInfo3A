@@ -46,8 +46,9 @@
 
 import { useState } from "react";
 import Titulo from "./components/Titulo";
-//import ListaPedidos from "./components/ListaPedidos";
+import ListaPedidos from "./components/ListaPedidos";
 import ListaProdutos from "./components/ListaProdutos";
+import Footer from "./components/Footer";
 export default function Home() {
   const [listaProdutos, setProduto] = useState([
     {
@@ -95,24 +96,11 @@ export default function Home() {
   return (
     <>
     <Titulo titulo={"Lorem ipsum dolor sit amet."}/>
-    <div><h1 class="h1-titulo"></h1></div>
     <div className="bloco-principal">
-
-    <ListaProdutos listaProdutos={listaProdutos} />
-    <listaProdutos adicionarItemPedidos={adicionarItemPedidos} />
-
-      <div class="bloco-pedidos">
-        <h1>Pedidos</h1>
-        {listaPedido.map((produto) => (
-          <div key={produto.id}>
-            <p class="produto-nome">{produto.nome}</p>
-            <img src={produto.imagem}></img>
-            <p>R$ {produto.preco}</p>
-            <button class="button-remover" onClick={() => removerPedido(produto.id)}>Remover</button>
-          </div>
-        ))}
-      </div> 
+      <ListaProdutos listaProdutos={listaProdutos} adicionarItemPedidos={adicionarItemPedidos} />
+      <ListaPedidos listaPedido={listaPedido} removerPedido={removerPedido} />
     </div>
+    <Footer desenvolvedor={"João Pedro Fernandes Picolo"}/>
     </>
   );
 }

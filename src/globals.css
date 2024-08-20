@@ -8,7 +8,18 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     align-items: flex-start;
-    background: linear-gradient(45deg, rgb(143, 154, 255), rgb(121, 239, 255), rgb(44, 255, 223))
+    background: linear-gradient(45deg, rgb(143, 154, 255), rgb(121, 239, 255), rgb(44, 255, 223));
+}
+
+nav{
+    text-align: center;
+}
+
+#header{
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    background-color: red;
 }
 
 .container {
@@ -168,6 +179,19 @@ img{
 .h1-titulo{
     padding: 12px;
 }
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+main {
+    position: relative;
+    padding-bottom: 100px; /* altura do rodapé */
+  }
 
 @media (max-width: 768px) {
     .container {
